@@ -6,13 +6,30 @@
 <body>
   <h1>Event schedule</h1>
 
-  <table>
-    <tr>
-      <td>8pm</td>
-      <td>Doors open</td>
+  <h2>Simple loop</h2>
+
+  <table border="1">
+  	<% @schedule.sort! %>
+  	<% @schedule.each do |scheduleRow| %>
+  	<tr>
+    	<td><%= scheduleRow[0] %></td>
+    	<td><%= scheduleRow[1] %></td>
     </tr>
-    <!-- etc. etc. -->
+    <% end %>
   </table>
+
+  <h2>Nested loop</h2>
+
+  <table border="1">
+  	<% @schedule.each do |event| %>
+    <tr>
+    	<% event.each do |eventDetail| %>
+      	<td><%= eventDetail %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
+
 
 </body>
 </html>

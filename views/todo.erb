@@ -4,13 +4,14 @@
   <title>Event Manager 2.0</title>
 </head>
 <body>
-  <h1>Todo list</h1>
+  <h1>To-do list</h1>
 
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+  <ol>
+    <% @todos.sort %>
+    <% @todos.each do |todoItem| %>
+    	<li><%= todoItem %></li>
+    <% end %>
+  </ol>
 
 </body>
 </html>
